@@ -30,8 +30,14 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASS=docker
       - POSTGRES_PORT=5432
-      - STORAGE_BACKEND="FILE"
+      - STORAGE_BACKEND="S3"
       - DUMP_ARGS="-Fc"
+      - ACCESS_KEY_ID=<put there>
+      - SECRET_ACCESS_KEY="<put there>"
+      - DEFAULT_REGION=us-west-2
+      - BUCKET=<put there>
+      - HOST_BASE=s3.amazonaws.com
+      - HOST_BUCKET="%(bucket)s.s3.amazonaws.com"
       #- DB_TABLES=yes
       # Add a custom archive so that it can be used to restore as a test
       #- ARCHIVE_FILENAME=latest
